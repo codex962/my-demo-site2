@@ -1,0 +1,138 @@
+{
+  "project_overview": {
+    "name": "Synergy Petroleum",
+    "description": "Modern, 3D-styled web rebuild of casynergy.com with rich motion animations, animated imagery, smooth page transitions, and an admin dashboard.",
+    "theme": "dark",
+    "vibe": "modern, premium, energetic, cinematic",
+    "target_audience": "Northern California fuel distributor, B2B clients, fleet operators, gas station operators",
+    "app_type": "hybrid_fullstack"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit",
+      "weights": ["300", "500", "700", "800"],
+      "strategy": "Expressive and large (text-5xl to text-6xl+). Must use tight letter spacing (tracking-tight or tracking-tighter). Never use Inter for headings."
+    },
+    "body": {
+      "font_family": "Manrope",
+      "weights": ["400", "500", "600"],
+      "strategy": "Clean, readable, moderate scales. Left-align for better readability."
+    },
+    "overlines": {
+      "style": "Uppercase + Tiny + Wide Spacing (tracking-[0.2em])"
+    }
+  },
+  "colors": {
+    "archetype": "ARCHETYPE 7: ELECTRIC & NEON (Future, Speed, Disruption) mixed with LUXURY (Premium, Depth, Mystery)",
+    "primary": {
+      "DEFAULT": "hsl(199, 89%, 48%)",
+      "foreground": "hsl(0, 0%, 100%)",
+      "description": "Energy Cyan - for glowing accents and primary actions"
+    },
+    "secondary": {
+      "DEFAULT": "hsl(215, 25%, 27%)",
+      "foreground": "hsl(0, 0%, 100%)",
+      "description": "Deep Slate - for secondary cards and muted UI elements"
+    },
+    "background": {
+      "DEFAULT": "hsl(222, 47%, 4%)",
+      "description": "Void Black / Deepest Midnight Blue for cinematic depth. Never use pure #000000."
+    },
+    "surface": {
+      "DEFAULT": "hsl(222, 47%, 7%)",
+      "glass": "bg-black/60 backdrop-blur-xl border-white/10"
+    },
+    "accent": {
+      "DEFAULT": "hsl(142, 71%, 45%)",
+      "description": "Neon Green for 'renewable fuels' and positive indicators"
+    }
+  },
+  "visual_enhancers": {
+    "surfaces": "Glassmorphism for sticky headers (Optical Clarity with backdrop-saturate-150 and border-white/10). Solid flat backgrounds with 1px subtle borders for dashboard cards.",
+    "gradients": "Avoid full-screen gradients. Use localized blurred orbs (glows) behind 3D objects or text. Max overlay opacity for images is bg-black/50.",
+    "borders": "1px border-white/10 for dark mode marketing sections. Subtle grid borders for the Services list.",
+    "shadows": "Ambient glows using Tailwind drop-shadow-[0_0_15px_rgba(14,165,233,0.3)] for energy elements. Soft diffuse shadows for dashboard cards."
+  },
+  "layouts": {
+    "marketing_pages": {
+      "grid": "Bento grids with grid-cols-1 md:grid-cols-12 and gap-8 to gap-12. Asymmetry and overlapping elements.",
+      "spacing": "Generous spacing. py-24, py-32 for sections. Containers with borders need p-8 padding internally.",
+      "hero": "Full viewport height (min-h-screen) with 3D canvas background and floating objects. Text overlaid with z-10."
+    },
+    "dashboard": {
+      "grid": "High Density Grid. grid-cols-1 md:grid-cols-3 lg:grid-cols-4 with gap-4 or gap-6.",
+      "spacing": "Dense and compact. p-4 or p-6. Every pixel must be utilized."
+    }
+  },
+  "motion": {
+    "libraries": ["framer-motion", "gsap", "@gsap/react", "lenis"],
+    "interactions": "Magnetic buttons, scroll-triggered fade-up and parallax for images. Page transitions using Framer Motion (AnimatePresence).",
+    "hover_states": "Hover states must explicitly set text color and background. Cards should slightly lift (-translate-y-1) and increase border opacity.",
+    "micro_animations": "Use framer-motion for smooth entrance animations. Staggered lists for Services and Locations."
+  },
+  "accessibility": {
+    "contrast": "Maintain 4.5:1 ratio. Text over images must use bg-black/50 or text-shadow.",
+    "motion": "Respect prefers-reduced-motion media query. Add aria-hidden to decorative 3D elements.",
+    "testing": "All interactive elements MUST include data-testid attribute in kebab-case."
+  },
+  "3d_libraries": {
+    "react-three-fiber": {
+      "packages": ["@react-three/fiber", "@react-three/drei", "three"],
+      "usage": "Use for the Home page hero section. Add floating fuel-pump, barrel, and abstract energy shapes.",
+      "lighting": "Ensure adequate lighting (ambientLight, directionalLight) so objects are clearly visible against dark background."
+    }
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1674521645695-815ef207866b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxnYXMlMjBzdGF0aW9uJTIwbmlnaHR8ZW58MHx8fHwxNzgzNTE5MjYwfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Gas station illuminated at night",
+        "category": "Home/Brands/Locations"
+      },
+      {
+        "url": "https://images.pexels.com/photos/11087837/pexels-photo-11087837.jpeg",
+        "description": "Red semi-truck driving through scenic highway",
+        "category": "Services/Fleet Fueling"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1643139863038-7355941e9e89?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2xvd2luZ3xlbnwwfHx8fDE3ODI5Mzk4MTR8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract purple and blue energy swirl",
+        "category": "Home/Hero 3D texture or Background"
+      },
+      {
+        "url": "https://images.pexels.com/photos/2539433/pexels-photo-2539433.jpeg",
+        "description": "San Francisco skyline aerial view",
+        "category": "Locations/Map Background"
+      }
+    ]
+  },
+  "components": {
+    "strategy": "Marketing pages: Custom HTML/Tailwind + framer-motion. Dashboard/Forms: Customized Shadcn UI components.",
+    "map": "Leaflet for interactive map (react-leaflet, leaflet) on Locations page. Custom dark map tiles (e.g., CartoDB Dark Matter).",
+    "icons": "Use @phosphor-icons/react for marketing, lucide-react for dashboard.",
+    "toast": "Use sonner for notifications."
+  },
+  "instructions_to_main_agent": [
+    "Install required libraries: yarn add framer-motion gsap @gsap/react @react-three/fiber @react-three/drei three react-leaflet leaflet @types/leaflet lenis @phosphor-icons/react",
+    "Never use transparent header without a blur or scrim. Ensure sticky header has z-50 and readable contrast.",
+    "Do not use generic 'Vercel' look for marketing pages. Use bento grids and asymmetric layouts.",
+    "Dashboard should have a sidebar navigation and topbar with dense grid layout for widgets.",
+    "All forms (Contact, Admin Login) must use Shadcn form components, heavily customized to match the brand.",
+    "Do not center align standard text; left-align paragraphs and dense content.",
+    "Ensure dark mode is the primary theme for marketing, matching the 'cinematic' requirement. Do not force light mode on the homepage.",
+    "Use data-testid on all buttons and form inputs.",
+    "Add 'dark' class to html or body by default for the marketing view."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic 'AI slop' aesthetics. Use layered design elements with z-index hierarchy.",
+    "Create depth through glass-morphism effects with backdrop filters (12-24px blur).",
+    "Never apply universal transitions (e.g., transition: all). Target specific properties to prevent transform breaking.",
+    "Do not center align the App container (no .App { text-align: center; }).",
+    "Use modern button styles (pill-shaped or sharp) with interaction animations.",
+    "Never use AI assistant emoji characters (🤖🧠) for icons. Use Phosphor or Lucide.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx",
+    "Prioritize using pre-existing components from src/components/ui when applicable."
+  ]
+}
